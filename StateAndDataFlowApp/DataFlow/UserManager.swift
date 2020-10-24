@@ -32,7 +32,7 @@ extension UserManager {
     func delete() {
         UserDefaults.standard.removeObject(forKey: "name")
         isRegister = false
-        UserDefaults.standard.set(isRegister, forKey: "isRegister")
+        save()
     }
     
     func setName() -> String {
