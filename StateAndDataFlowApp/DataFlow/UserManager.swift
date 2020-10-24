@@ -12,7 +12,7 @@ class UserManager: ObservableObject {
     
     @Published var isRegister = UserDefaults.standard.bool(forKey: "isRegister")
     
-    var name = UserDefaults.standard.value(forKey: "name")
+    var name = UserDefaults.standard.string(forKey: "name")
     let logoutButtonTitle = "Logout"
     
     init() {}
@@ -36,11 +36,7 @@ extension UserManager {
     }
     
     func setName() -> String {
-        if isValidName() {
-            return name as! String
-        } else {
-            return ""
-        }
+        return isValidName() ? name!: ""
     }
     
     private func isValidName() -> Bool {
