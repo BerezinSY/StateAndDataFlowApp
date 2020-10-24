@@ -32,7 +32,7 @@ struct RegisteredView: View {
 
 extension RegisteredView {
     private func registerUser() {
-        if !name.isEmpty && !isNotEnoughCharacters() {
+        if !name.isEmpty {
             user.name = name
             user.isRegister = true
             user.save()
